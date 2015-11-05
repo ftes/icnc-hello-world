@@ -1,8 +1,7 @@
 # include "hello-world.h"
 
 int HelloWorldStep::execute(const int & tag, HelloWorldContext & ctxt) const {
-	ctxt.out_tag.put(tag);
-	ctxt.data.put(tag, tag);
+	ctxt.data.put(tag, tag*tag);
 	return CnC::CNC_Success;
 }
 
@@ -25,8 +24,8 @@ int main(int argc, char* argv[]) {
 	
 	ctxt.wait();
 	
-	CnC::item_collection<int, int>::const_iterator iter;
 	std::cout << "Created items:" << std::endl;
+	CnC::item_collection<int, int>::const_iterator iter;
     for (iter = ctxt.data.begin(); iter != ctxt.data.end(); iter++) {
         std::cout << iter->first << ": " << *iter->second << std::endl;
     }
