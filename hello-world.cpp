@@ -8,8 +8,8 @@ int HelloWorldStep::execute(const int & tag, HelloWorldContext & ctxt) const {
 int main(int argc, char* argv[]) {
 	HelloWorldContext ctxt;
 		
-	//CnC::debug::trace_all( *this ); 
-	//CnC::debug::collect_scheduler_statistics(*this);
+	CnC::debug::trace_all(ctxt);
+	CnC::debug::collect_scheduler_statistics(ctxt);
 
 	int n = 1;
 	if (argc > 1) {
