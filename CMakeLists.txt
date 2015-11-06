@@ -1,3 +1,7 @@
+# assumes that CnC environment variables are available
+# (e.g. have been sourced in the session from which CLion was started)
+# $ source <cnc-install>/bin/cncvars.sh; ./clion.sh
+
 cmake_minimum_required(VERSION 3.2)
 project(cnc_hello_world)
 set( CMAKE_VERBOSE_MAKEFILE on )
